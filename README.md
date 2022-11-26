@@ -15,4 +15,28 @@ This project uses:
 
 # How To Use
 
-<TBA>
+First you need to install the project packges run
+
+```sh
+yarn install
+```
+
+Then to run the dev server run, you can use `-p` to change the prot (default to 5000)
+
+```sh
+yarn dev
+```
+
+To build the project run, it will build both vite for client and expressjs for server
+
+```sh
+yarn build
+```
+
+To serve the built project, run
+
+```sh
+yarn serve
+```
+
+To start the dev server run

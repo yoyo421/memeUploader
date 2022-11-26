@@ -1,0 +1,7 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/nodemon.json",
+  "verbose": true,
+  "ignore": ["db*/*"],
+  "watch": ["src/*", "@types/*", ".env", "*.json"],
+  "ext": "ts json tsx css html"
+}
