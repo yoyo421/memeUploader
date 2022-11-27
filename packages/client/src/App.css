@@ -17,6 +17,14 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+form {
+  border-color: white;
+  border-radius: 3px;
+  border-style: solid;
+  padding: 3em;
+  min-width: 50vw;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

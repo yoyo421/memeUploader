@@ -57,10 +57,12 @@ app.use(
 const port = flags.port || parseInt(process.env.SERVER_PORT || "-") || 5000;
 const clientPath = path.resolve(__dirname, "../..", "client");
 
+const isProd = process.env.NODE_ENV === "production";
+
 async function createServer() {
   app.use("/v1", api);
 
-  if (process.env.NODE_ENV === "production") {
+  if (isProd) {
     // SPA simple server side
     app.use(express.static(path.resolve(clientPath, "dist")));
     app.get("*", (req, res) =>
@@ -78,7 +80,9 @@ async function createServer() {
   }
 
   app.listen(port, () => {
-    console.log(`🚀 server started at http://localhost:${port}`);
+    console.log(
+      `${isProd ? "⚡" : "🚧 dev"} server started at http://localhost:${port}`
+    );
   });
 }
 

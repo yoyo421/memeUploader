@@ -4,9 +4,11 @@ import isNil from "lodash/isNil";
 import { PUTV1File } from "@local/server";
 import "./App.css";
 import isUrl from "./lib/isUrl";
-import { Dialog, InlineSpan } from "./components";
+import { Dialog, FlexRow, InlineSpan } from "./components";
 import DnDFile from "./components/DnDFile";
-import Modal from "./components/Modal";
+import ModalTextCopy from "./components/ModalTextCopy";
+import { Button, MenuItem, Select, TextField } from "@mui/material";
+import UploadMemes from "../public/UploadMemes.svg";
 
 function App() {
   const [file, setFile] = React.useState<File>();
@@ -58,8 +60,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Meme Uploader</h1>
-      <Modal copyText={value} />
+      <h1>
+        <img src={UploadMemes} style={{ height: "1em", padding: 5 }} />
+        Meme Uploader
+      </h1>
+      <ModalTextCopy copyText={value} />
       <form
         action="/v1/file"
         onSubmit={formSubmit}
@@ -68,18 +73,18 @@ function App() {
       >
         <InlineSpan style={{ color: "red" }}>{error}</InlineSpan>
         <DnDFile name="image" file={file} onFile={setFile} />
-        <div>
-          <span>Delete After</span>
-          <input defaultValue={1} type="number" name="time" />
-          <select defaultValue={60} name="unit">
-            <option value={1}>S</option>
-            <option value={60}>M</option>
-            <option value={3600}>H</option>
-          </select>
-        </div>
-        <button type="submit" disabled={loading}>
+        <FlexRow dir="row" gap={"1em"} padding={"1em"} center>
+          <span style={{ alignSelf: "center" }}>Delete After</span>
+          <TextField defaultValue={1} type="number" name="time" />
+          <Select defaultValue={60} name="unit">
+            <MenuItem value={1}>Seconds</MenuItem>
+            <MenuItem value={60}>Minues</MenuItem>
+            <MenuItem value={3600}>Hours</MenuItem>
+          </Select>
+        </FlexRow>
+        <Button variant="outlined" type="submit" disabled={loading}>
           Upload
-        </button>
+        </Button>
       </form>
     </div>
   );

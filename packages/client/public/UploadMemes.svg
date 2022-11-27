@@ -1,0 +1,40 @@
+<svg data-version="6.5" use-custom-elements="" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" style="height:unset;" id="IDI_1cx994p" class="showed"
+    viewBox="0 0 64 64">
+    <style type="text/css" data-name="font">
+        @import url("https://fonts.googleapis.com/css?family=Roboto:regular&amp;subset=latin");
+
+        * {
+            font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+        }
+    </style>
+    <g class="page-list showable-children">
+        <g class="page showed" custom-element="page-svg" transform="translate( 0  0 )">
+            <g class="content">
+                <!--<g custom-element="layer-walls-svg" active class="layer" data-layer-color="#007fff" data-layer-name="default layer">-->
+                <!--</g>-->
+                <g transform="matrix(1,0,0,1,0,0)" data-layer-name="Layer 2" data-layer-color="#ffff00" class="layer"
+                    custom-element="layer-svg">
+                    <ellipse transform="matrix(1 0 0 1 31.9467 31.9355)" rx="30.738811974432643" ry="31.012451250169434"
+                        stroke-width="3.397163585287444" stroke="#FFFFFF" fill="#FFFFFF" stroke-opacity="1"
+                        fill-opacity="1" stroke-linecap="butt" stroke-linejoin="miter" class="" />
+                </g>
+                <g transform="matrix(1,0,0,1,0,0)" data-layer-name="untitled layer" data-layer-color="#ff7f00"
+                    class="layer" custom-element="layer-svg" active=""><text transform="matrix(1 0 0 1 1.0493 46.0577)"
+                        width="339.7163585287445" height="10.215866088867188" font-family="Roboto" font-size="35"
+                        font-style="normal" font-weight="400" text-align="left" fill="#BA00FF" text-anchor="start"
+                        custom-element="svg-text" data-mantain-aspect-ratio="true" data-use-rich-text="false" class=""
+                        stroke-width="3.397163585287444" filter="drop-shadow( 0px 0px 0px rgb(18, 0, 255)) "
+                        fill-opacity="1">
+                        <tspan x="5" dy="-2">
+                            <![CDATA[MU]]>
+                        </tspan>
+                    </text>
+                    <line x1="2.4715352058410645" y1="23.212533950805664" x2="60.871055603027344" y2="42.34006881713867"
+                        stroke-width="3.397163585287444" stroke="#FFFFFF" stroke-linecap="butt" class="" fill="#FFFFFF"
+                        fill-opacity="1" stroke-opacity="1" />
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -10,9 +10,16 @@ export const DropZone = styled.div({
   borderRadius: "0.2em",
 });
 
-export const HiddenFileInputContainer = styled.div({
-  position: "relative",
-});
+export const FileInputContainer = styled.div(
+  (props: { isHover?: boolean }) =>
+    ({
+      transition: "0.2s",
+      position: "relative",
+      padding: "1em",
+      outline: "dashed 2px",
+      boxShadow: props.isHover ? "0 0 1em white" : undefined,
+    } as const)
+);
 
 export const HiddenFileInput = styled.input({
   position: "absolute",
@@ -21,6 +28,7 @@ export const HiddenFileInput = styled.input({
   opacity: 0,
   width: "100%",
   height: "100%",
+  cursor: "pointer",
 });
 
 export const InlineSpan = styled.div({
@@ -33,8 +41,16 @@ export const Dialog = styled.dialog({
 });
 
 export const FlexRow = styled.div(
-  (props: { dir: React.CSSProperties["flexDirection"] }) => ({
+  (props: {
+    dir?: React.CSSProperties["flexDirection"];
+    gap?: React.CSSProperties["gap"];
+    padding?: React.CSSProperties["padding"];
+    center?: boolean;
+  }) => ({
     display: "flex",
     flexDirection: props.dir,
+    gap: props.gap,
+    padding: props.padding,
+    placeContent: props.center ? "center" : undefined,
   })
 );

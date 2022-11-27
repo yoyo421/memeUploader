@@ -15,8 +15,10 @@
     "serve": "cross-env NODE_ENV=production DB_PATH=db.dist yarn server:serve"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.8",
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
+    "depcheck": "^1.4.3",
     "typescript": "^4.6.4"
   },
   "devDependencies": {

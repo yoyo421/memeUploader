@@ -1,12 +1,8 @@
 import React from "react";
 import { lookup } from "mrmime";
 import humanFormat from "human-format";
-import {
-  InlineSpan,
-  HiddenFileInputContainer,
-  DropZone,
-  HiddenFileInput,
-} from ".";
+import { css } from "@emotion/css";
+import { InlineSpan, FileInputContainer, DropZone, HiddenFileInput } from ".";
 
 export default function DnDFile(props: {
   name: string;
@@ -15,9 +11,7 @@ export default function DnDFile(props: {
 }) {
   const { name, file, onFile } = props;
   const inputId = React.useId();
-  const [dndState, setDndState] = React.useState<"none" | "hover" | "drop">(
-    "none"
-  );
+  const [dndState, setDndState] = React.useState<"none" | "over">("none");
   const [error, setError] = React.useState<string>();
 
   const onInputFileChange = React.useCallback(
@@ -82,17 +76,18 @@ export default function DnDFile(props: {
   }, [onFile, file]);
 
   return (
-    <>
-      <HiddenFileInputContainer>
-        <DropZone>{dropZoneNode}</DropZone>
-        <HiddenFileInput
-          name={name}
-          id={inputId}
-          type="file"
-          onChange={onInputFileChange}
-          required
-        />
-      </HiddenFileInputContainer>
-    </>
+    <FileInputContainer isHover={dndState === "over"}>
+      <DropZone>{dropZoneNode}</DropZone>
+      <HiddenFileInput
+        name={name}
+        id={inputId}
+        type="file"
+        onChange={onInputFileChange}
+        required
+        onDragOver={() => setDndState("over")}
+        onDragLeave={() => setDndState("none")}
+        onDrop={() => setDndState("none")}
+      />
+    </FileInputContainer>
   );
 }

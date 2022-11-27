@@ -16,6 +16,7 @@ dist.*
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea
 .DS_Store
 *.suo
@@ -128,6 +129,7 @@ dist
 # vuepress v2.x temp and cache directory
 .temp
 .cache
+db*
 
 # Docusaurus cache and generated files
 .docusaurus
